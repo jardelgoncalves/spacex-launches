@@ -7,7 +7,13 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     const launch = await getLauchById(id as string)
   
     return {
-      props: launch,
+      props: {
+        ...launch,
+        meta: {
+          title: `${launch.mission_name} | SpaceX Launches`,
+          description: launch.details || launch.mission_name
+        }
+      },
     }
   } catch {
     return {
