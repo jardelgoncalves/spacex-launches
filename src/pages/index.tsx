@@ -7,7 +7,13 @@ export const getStaticProps: GetStaticProps = async () => {
   const launches = await getLaunchesPast()
 
   return {
-    props: { launches },
+    props: {
+      launches,
+      meta: {
+        title: "SpaceX Launches",
+        description: "SpaceX Launches with Next.JS + GraphQL and Styled Components"
+      }
+    },
     revalidate: revalidateWith('7d')
   }
 }
