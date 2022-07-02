@@ -1,10 +1,5 @@
-import { LaunchArticle } from "components/pages/LaunchArticle";
-import { getLauchById, LaunchType } from "graphql/queries/getLaunchById";
+import { getLauchById } from "graphql/queries/getLaunchById";
 import { GetServerSideProps } from "next";
-
-export default function LaunchItem(props: LaunchType) {
-  return <LaunchArticle {...props} />
-}
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   try {
@@ -20,3 +15,5 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     }
   }
 }
+
+export { default } from "components/pages/LaunchArticle";
