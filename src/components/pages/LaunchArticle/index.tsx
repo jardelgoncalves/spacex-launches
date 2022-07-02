@@ -2,7 +2,7 @@ import { LaunchCover } from 'components/ui/LaunchCover'
 import { LaunchType } from 'graphql/queries/getLaunchById'
 import * as S from './LaunchArticle.styles'
 
-export const LaunchArticle = ({ image, mission_name, rocket, details, links }: LaunchType) => {
+const LaunchArticle = ({ image, mission_name, rocket, details, links }: LaunchType) => {
   return (
     <S.Main>
       <LaunchCover src={image} alt={mission_name} />
@@ -27,3 +27,5 @@ export const LaunchArticle = ({ image, mission_name, rocket, details, links }: L
     </S.Main>
   )
 }
+
+export default LaunchArticle
